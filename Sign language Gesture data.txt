@@ -1,0 +1,83 @@
+Sign language Gesture data:
+
+
+Data: 
+-good
+
+		   289
+	Sensor A1: 194
+	Sensor A2: 162
+	Sensor A3: 255
+
+
+- Eight 
+		   283
+	Sensor A1: 173
+	Sensor A2: 251
+	Sensor A3: 296
+
+- U
+
+		270
+	Sensor A1: 307
+	Sensor A2: 252
+	Sensor A3: 294
+
+- water
+
+271
+	Sensor A1: 308
+	Sensor A2: 252
+	Sensor A3: 298
+
+-love
+
+291
+	Sensor A1: 197
+	Sensor A2: 251
+	Sensor A3: 271
+
+- money
+292
+	Sensor A1: 277
+	Sensor A2: 242
+	Sensor A3: 296
+
+- yes
+299
+	Sensor A1: 169
+	Sensor A2: 249
+	Sensor A3: 276
+
+-hi
+296
+	Sensor A1: 278
+	Sensor A2: 253
+	Sensor A3: 296
+
+Like:
+295
+	Sensor A1: 186
+	Sensor A2: 252
+	Sensor A3: 297
+
+L:
+299
+	Sensor A1: 197
+	Sensor A2: 259
+	Sensor A3: 274
+
+
+A:
+
+273
+	Sensor A1: 183
+	Sensor A2: 214
+	Sensor A3: 261
+
+S:
+
+		   234
+	Sensor A1: 176
+	Sensor A2: 184
+	Sensor A3: 268
