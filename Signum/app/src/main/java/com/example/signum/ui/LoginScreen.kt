@@ -48,7 +48,7 @@ fun LoginScreen(onLoginClick: (String, String) -> Unit) {
         )
 
         Image(
-            painter = painterResource(id = R.drawable.logo_business),
+            painter = painterResource(id = R.drawable.logo_sign),
             contentDescription = "Logo",
             modifier = Modifier
                 .size(120.dp)
