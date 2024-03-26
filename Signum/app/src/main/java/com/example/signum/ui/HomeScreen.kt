@@ -41,6 +41,11 @@ fun HomeScreen(onLogoutClick: () -> Unit) {
 
 @Composable
 fun HomeContent(onLogoutClick: () -> Unit) {
+    val gloveText = remember { mutableStateOf("") }
+
+    // Simulated glove input (replace with actual glove data parsing)
+    val simulatedGloveInput = "Hello, world!"
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -54,7 +59,17 @@ fun HomeContent(onLogoutClick: () -> Unit) {
             modifier = Modifier.padding(bottom = 32.dp)
         )
 
-        // Add any additional content for the home tab
+        GloveInputDisplay(gloveText = gloveText.value)
+
+        Button(
+            onClick = {
+                // Update the glove text with the simulated input
+                gloveText.value = simulatedGloveInput
+            },
+            modifier = Modifier.padding(top = 16.dp)
+        ) {
+            Text("Simulate Glove Input")
+        }
 
         Button(
             onClick = onLogoutClick,
@@ -63,4 +78,13 @@ fun HomeContent(onLogoutClick: () -> Unit) {
             Text("Logout")
         }
     }
+}
+
+@Composable
+fun GloveInputDisplay(gloveText: String) {
+    Text(
+        text = "Glove Input: $gloveText",
+        style = MaterialTheme.typography.bodyLarge,
+        modifier = Modifier.padding(top = 16.dp)
+    )
 }
