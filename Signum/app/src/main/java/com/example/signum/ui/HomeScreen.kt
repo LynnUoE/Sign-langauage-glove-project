@@ -25,7 +25,7 @@ import com.example.signum.R
 
 @Composable
 fun HomeScreen(onLogoutClick: () -> Unit) {
-    val tabTitles = listOf("Home", "Translator")
+    val tabTitles = listOf("Home", "Translator","AI Agent")
     val selectedTabIndex = remember { mutableStateOf(0) }
 
     Column(modifier = Modifier.fillMaxSize()) {
@@ -42,6 +42,7 @@ fun HomeScreen(onLogoutClick: () -> Unit) {
         when (selectedTabIndex.value) {
             0 -> HomeContent(onLogoutClick)
             1 -> TranslationScreen()
+            2 -> AiAgentScreen()
         }
     }
 }
