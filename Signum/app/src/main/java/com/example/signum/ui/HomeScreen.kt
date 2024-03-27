@@ -1,8 +1,12 @@
 package com.example.signum.ui
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Tab
@@ -11,10 +15,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.example.signum.R
 
 @Composable
 fun HomeScreen(onLogoutClick: () -> Unit) {
@@ -49,7 +56,9 @@ fun HomeContent(onLogoutClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
             text = "Welcome to SIGNUM",
@@ -59,6 +68,14 @@ fun HomeContent(onLogoutClick: () -> Unit) {
             modifier = Modifier.padding(bottom = 32.dp)
         )
 
+        Image(
+            painter = painterResource(id = R.drawable.logo_sign),
+            contentDescription = "Logo",
+            modifier = Modifier
+                .size(120.dp)
+                .padding(bottom = 32.dp)
+        )
+
         GloveInputDisplay(gloveText = gloveText.value)
 
         Button(
@@ -66,14 +83,18 @@ fun HomeContent(onLogoutClick: () -> Unit) {
                 // Update the glove text with the simulated input
                 gloveText.value = simulatedGloveInput
             },
-            modifier = Modifier.padding(top = 16.dp)
-        ) {
-            Text("Simulate Glove Input")
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp)
+        ){
+            Text("Glove Text")
         }
 
         Button(
             onClick = onLogoutClick,
-            modifier = Modifier.padding(top = 32.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp)
         ) {
             Text("Logout")
         }
@@ -83,8 +104,9 @@ fun HomeContent(onLogoutClick: () -> Unit) {
 @Composable
 fun GloveInputDisplay(gloveText: String) {
     Text(
-        text = "Glove Input: $gloveText",
+        text = "Glove Text: $gloveText",
         style = MaterialTheme.typography.bodyLarge,
-        modifier = Modifier.padding(top = 16.dp)
+        fontWeight = FontWeight.Bold,
+        modifier = Modifier.padding(top = 32.dp)
     )
 }
